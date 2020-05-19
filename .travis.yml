@@ -9,8 +9,6 @@ services:
 
 jobs:
         include:
-                - stage: install
-                  script: pip install -r requirements
                 - stage: test
                   script: behave
                 - stage: build_image
