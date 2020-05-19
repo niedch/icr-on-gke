@@ -1,17 +1,18 @@
-language: python
-
-git: 
-        depth: false
-
 services:
         - docker
 
-
 jobs:
         include:
+                - stage: reqirements
+                  script: pip install -r requirements.txt
                 - stage: test
                   script: behave
                 - stage: build_image
                   script:
                           - echo $(git rev-parse --short HEAD)
                           - docker build -t python-app:$(git rev-parse --short HEAD) .
+
+stages:
+        - reqiurements
+        - test
+        - build_image
