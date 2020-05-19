@@ -8,4 +8,4 @@ services:
 
 before_install:
         - echo $(git describe --tags)
-        - docker build -t python-app:§(git describe --tags) .
+        - docker build -t python-app:$(git describe --tags) .
