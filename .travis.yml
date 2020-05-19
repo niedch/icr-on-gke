@@ -4,5 +4,5 @@ services:
         - docker
 
 before_install:
-        - echo $(git describe)
-        - docker build -t python-app:latest .
+        - echo $(git describe --tags)
+        - docker build -t python-app:§(git describe --tags) .
