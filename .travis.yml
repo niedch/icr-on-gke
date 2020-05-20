@@ -9,8 +9,8 @@ script: behave
 
 before_deploy:
         - echo $(git rev-parse --short HEAD)
-        - docker build -t python-app:$(git rev-parse --short HEAD) .
+        - docker build -t christophniederer/test-repo:$(git rev-parse --short HEAD) .
 
 deploy:
         provider: script
-        script: docker images
+        script: bash docker_push.sh christophniederer/test-repo:$(git rev-parse --short HEAD) 
