@@ -10,7 +10,6 @@ script: behave
 before_deploy:
         - echo $(git rev-parse --short HEAD)
         - docker build -t christophniederer/test-repo:$(git rev-parse --short HEAD) .
-        - ls -lsa
 deploy:
         provider: script
         script: bash docker_push.sh christophniederer/test-repo:$(git rev-parse --short HEAD) 
