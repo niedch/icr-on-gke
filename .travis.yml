@@ -12,4 +12,5 @@ before_deploy:
         - docker build -t python-app:$(git rev-parse --short HEAD) .
 
 deploy:
-        - docker images
+        provider: script
+        script: docker images
