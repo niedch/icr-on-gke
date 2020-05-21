@@ -22,6 +22,12 @@ spec:
         - name: icr-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SPOTIFY_OAUTH
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secrets.spotifyauthtoken }}
+                  key: SPOTIFY_OAUTH_TOKEN
           ports:
             - name: http
               containerPort: 80

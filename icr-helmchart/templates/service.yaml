@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "icr-helmchart.labels" . | nindent 4 }}
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 80
       targetPort: http

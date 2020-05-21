@@ -6,8 +6,11 @@ image:
   repository: christophniederer/test-repo
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8434a53"
+  tag: "8b23609"
   pullSecret: pull-secret
+
+secrets:
+  spotifyauthtoken: spotifyauthtoken 
 
 
 serviceAccount:
@@ -26,10 +29,6 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
-service:
-  type: ClusterIP
-  port: 80
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
