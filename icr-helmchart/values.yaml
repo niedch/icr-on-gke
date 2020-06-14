@@ -6,7 +6,7 @@ image:
   repository: christophniederer/test-repo
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "8b23609"
+  tag: "498d8a3"
   pullSecret: pull-secret
 
 secrets:
